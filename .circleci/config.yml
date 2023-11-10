@@ -15,6 +15,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Install bazelisk"
+          command: "bash ./_scripts/install-bazelisk.sh"
+      - run:
           name: "bazel test //..."
           command: "bazel test //..."
 
