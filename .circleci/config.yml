@@ -18,6 +18,9 @@ jobs:
           name: "Install bazelisk"
           command: "bash ./_scripts/install-bazelisk.sh"
       - run:
+          name: "Enable Build Cache for Bazel"
+          command: "envsubst < .bitrise-build-cache.bazelrc.tpl > .bitrise-build-cache.bazelrc"
+      - run:
           name: "bazel test //..."
           command: "bazel test //..."
   build-and-run:
@@ -32,6 +35,9 @@ jobs:
       - run:
           name: "Install bazelisk"
           command: "bash ./_scripts/install-bazelisk.sh"
+      - run:
+          name: "Enable Build Cache for Bazel"
+          command: "envsubst < .bitrise-build-cache.bazelrc.tpl > .bitrise-build-cache.bazelrc"
       - run:
           name: "bazel run //:bazel-poc"
           command: "bazel run //:bazel-poc"
