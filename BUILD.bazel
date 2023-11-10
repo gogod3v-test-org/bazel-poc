@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/gogod3v-test-org/bazel-poc
+gazelle(name = "gazelle")
+
+go_library(
+    name = "bazel-poc_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/gogod3v-test-org/bazel-poc",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "bazel-poc",
+    embed = [":bazel-poc_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "bazel-poc_test",
+    srcs = ["main_test.go"],
+    embed = [":bazel-poc_lib"],
+)
