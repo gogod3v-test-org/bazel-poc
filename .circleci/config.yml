@@ -38,7 +38,7 @@ jobs:
           command: "bash ./_scripts/install-bazelisk.sh"
       - run:
           name: "Enable Build Cache for Bazel"
-          command: "circleci env subst < .bitrise-build-cache.bazelrc.tpl > .bitrise-build-cache.bazelrc"
+          command: "circleci env subst < .buildbuddy-build-cache.bazelrc.tpl > .buildbuddy-build-cache.bazelrc"
       - run:
           name: "bazel test //..."
           command: "bazel test //..."
