@@ -2,3 +2,5 @@ bazel-bin
 bazel-out
 bazel-testlogs
 bazel-bazel-poc
+.bitrise-build-cache.bazelrc
+.buildbuddy-build-cache.bazelrc

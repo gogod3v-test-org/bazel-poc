@@ -7,5 +7,5 @@ func sayHello(who string) string {
 }
 
 func main() {
-	fmt.Println(sayHello("World"))
+	fmt.Println(sayHello("World."))
 }

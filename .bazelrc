@@ -1,0 +1,2 @@
+try-import %workspace%/.bitrise-build-cache.bazelrc
+try-import %workspace%/.buildbuddy-build-cache.bazelrc
